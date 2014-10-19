@@ -5,12 +5,12 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Component;
 @Component(value="cal")
 public class Calculator {
-	@Cacheable(value="persons", key="new Integer(#a).toString()+new Integer(#b).toString()")
+	@Cacheable(value="namespace1", key="new Integer(#a).toString()+\"-\"+new Integer(#b).toString()")
 	public  int add(int a, int b) { 
 		return a+b;
 	}
 	
-	@CacheEvict(value = "persons", allEntries=true)
+	@CacheEvict(value = "namespace1", allEntries=true)
 	public void loadBooks()
 	{
 		

@@ -1,9 +1,5 @@
 package com.test;
 
-import java.util.Collection;
-
-import junit.framework.Assert;
-
 import net.sf.ehcache.Statistics;
 
 import org.junit.Test;
@@ -40,7 +36,7 @@ System.out.println(calculator.add(3,2));
 //	for(String name:cacheNames){
 //		System.out.println(name);
 //	}
-	Cache cache = cacheManager.getCache("persons");
+	Cache cache = cacheManager.getCache("namespace1");
 	
 	net.sf.ehcache.Cache c=(net.sf.ehcache.Cache) cache.getNativeCache();
 	Statistics statistics = c.getStatistics();
